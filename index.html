@@ -1,0 +1,28 @@
+<!-- a counter app -->
+<!-- a dynamic counter app  -->
+<!-- we need to do a lot of mathematical operations -->
+<!-- harder to write something like this for a bigger application  -->
+<!-- so react came to picture  -->
+<!-- its just a easier way to write html css and javascript -->
+
+<html>
+  <script>
+    function onButtonPress() {
+      //current value
+      const currentValue = document.getElementById("btn").innerHTML;
+      console.log(currentValue.split(" "));
+      // current counter
+      const currentCounter = currentValue.split(" ")[1];
+      console.log(currentCounter);
+
+      // new counter
+      let newCounter = parseInt(currentCounter) + 1;
+
+      // update
+      document.getElementById("btn").innerHTML = "Count " + newCounter;
+    }
+  </script>
+  <body>
+    <button onclick="onButtonPress()" id="btn">Count 0</button>
+  </body>
+</html>
