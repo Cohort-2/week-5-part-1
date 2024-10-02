@@ -28,6 +28,13 @@ const App = () => {
   return (
     <div>
       {/* <button onClick={onButtonPress}>Counter {count}</button> */}
+
+      {/* now we can reuse this button */}
+      <CustomButton count={count} setCount={setCount}></CustomButton>
+      <CustomButton count={count} setCount={setCount}></CustomButton>
+      <CustomButton count={count} setCount={setCount}></CustomButton>
+      <CustomButton count={count} setCount={setCount}></CustomButton>
+      <CustomButton count={count} setCount={setCount}></CustomButton>
       <CustomButton count={count} setCount={setCount}></CustomButton>
     </div>
   );
