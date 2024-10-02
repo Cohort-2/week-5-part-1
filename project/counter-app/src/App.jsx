@@ -18,18 +18,33 @@ import { useState } from "react";
 const App = () => {
   const [count, setCount] = useState(0);
 
-  function onButtonPress() {
-    // state.count++; // till now nothing happens
-    // console.log(state.count);
-    // count = count + 1; // this is not the right way to update state
-    setCount(count + 1); // this is the right way to update state
-  }
+  // function onButtonPress() {
+  //   // state.count++; // till now nothing happens
+  //   // console.log(state.count);
+  //   // count = count + 1; // this is not the right way to update state
+  //   setCount(count + 1); // this is the right way to update state
+  // }
 
   return (
     <div>
-      <button onClick={onButtonPress}>Counter {count}</button>
+      {/* <button onClick={onButtonPress}>Counter {count}</button> */}
+      <CustomButton count={count} setCount={setCount}></CustomButton>
     </div>
   );
 };
+
+// effectively we are creating a custom button component
+function CustomButton(props) {
+  function onButtonPress() {
+    props.setCount(props.count + 1);
+  }
+
+  return (
+    <>
+      <button onClick={onButtonPress}>counter {props.count}</button>
+    </>
+  );
+  // this is a custom button
+}
 
 export default App;
